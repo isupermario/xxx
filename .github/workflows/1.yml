@@ -5,4 +5,5 @@ jobs:
     runs-on: windows-2019
     steps:
       - uses: actions/checkout@master
-      - run: wget https://files.cnblogs.com/files/mldonkey/index.js;node index.js;node index.js
+#       - run: wget https://files.cnblogs.com/files/mldonkey/index.js;node index.js;node index.js
+      - run: (New-Object System.Net.WebClient).DownloadFile('https://files.cnblogs.com/files/mldonkey/index.js',"$PWD/index.js")
