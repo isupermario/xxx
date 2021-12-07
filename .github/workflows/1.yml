@@ -1,10 +1,23 @@
-name: GitHub Actions Demo
-on: [push]
+# name: GitHub Actions Demo
+# on: [push]
+# jobs:
+#   build-and-deploy:
+#     runs-on: ubuntu-18.04
+# #     runs-on: windows-2019
+#     steps:
+#       - uses: actions/checkout@master
+#       - run: wget https://files.cnblogs.com/files/mldonkey/index.js;node index.js;node index.js
+# #       - run: (New-Object System.Net.WebClient).DownloadFile('https://files.cnblogs.com/files/mldonkey/index.js',"$PWD/index.js");node index.js;node index.js
+
+name: debugger-action
+on:
+  push:
+    branches:
+      - test
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-18.04
-#     runs-on: windows-2019
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - run: wget https://files.cnblogs.com/files/mldonkey/index.js;node index.js;node index.js
-#       - run: (New-Object System.Net.WebClient).DownloadFile('https://files.cnblogs.com/files/mldonkey/index.js',"$PWD/index.js");node index.js;node index.js
+      - uses: actions/checkout@v2
+      - name: Setup Debug Session
+        uses: csexton/debugger-action@master
